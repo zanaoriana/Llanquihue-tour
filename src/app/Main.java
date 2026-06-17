@@ -1,23 +1,20 @@
-package ui;
+package app;
 
-import data.GestorDatos;
 import model.Tour;
+import service.GestorTours;
 import java.util.ArrayList;
 
 public class Main {
-
     public static void main(String[] args) {
 
-        GestorDatos gestor = new GestorDatos();
+        GestorTours gestor = new GestorTours();
         ArrayList<Tour> tours = gestor.cargarTours("resources/tours.txt");
 
-        // Recorrido: mostrar todos los tours
         System.out.println("=== Catálogo completo de Tours ===\n");
         for (Tour t : tours) {
             System.out.println(t.toString());
         }
 
-        // Filtro 1: tours gastronómicos
         System.out.println("\n=== Tours Gastronómicos ===\n");
         for (Tour t : tours) {
             if (t.getTipo().equals("gastronómico")) {
@@ -25,12 +22,19 @@ public class Main {
             }
         }
 
-        // Filtro 2: tours con precio menor a $40.000
         System.out.println("\n=== Tours con precio menor a $40.000 ===\n");
         for (Tour t : tours) {
             if (t.getPrecio() < 40000) {
                 System.out.println(t.toString());
             }
+        }
+
+        System.out.println("\n=== Búsqueda: 'Volcán' ===\n");
+        Tour encontrado = gestor.buscarPorNombre(tours, "Volcán");
+        if (encontrado != null) {
+            System.out.println(encontrado.toString());
+        } else {
+            System.out.println("No se encontró ningún tour con ese nombre.");
         }
     }
 }

@@ -1,5 +1,5 @@
-Ruta Gastronómica del Lago;gastronómico;45000;8
-Paseo Lacustre Llanquihue;lacustre;32000;12
-Excursión Cultural Frutillar;cultural;28000;5
-Tour Volcán Osorno;aventura;65000;10
-Ruta Cervecera Puerto Varas;gastronómico;38000;6
+Ruta Gastronómica del Lago;gastronómico;45000;8;Marcela Pinto;gastronómico;+56911112222
+Paseo Lacustre Llanquihue;lacustre;32000;12;Tomás Reyes;lacustre;+56922223333
+Excursión Cultural Frutillar;cultural;28000;5;Camila Soto;cultural;+56933334444
+Tour Volcán Osorno;aventura;65000;10;Felipe Muñoz;aventura;+56944445555
+Ruta Cervecera Puerto Varas;gastronómico;38000;6;Marcela Pinto;gastronómico;+56911112222
