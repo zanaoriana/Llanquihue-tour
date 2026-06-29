@@ -1,4 +1,4 @@
-# 🧠 Semana 5 – Desarrollo Orientado a Objetos I
+# 🧠 Semana 6 – Desarrollo Orientado a Objetos I
 
 ## 👤 Autora del proyecto
 - **Nombre completo:** Oriana Navarrete
@@ -8,49 +8,40 @@
 ---
 
 ## 📘 Descripción general del sistema
-Sistema orientado a objetos en Java que gestiona el catálogo de tours y guías de la agencia **Llanquihue Tour**. Lee datos desde un archivo `.txt`, valida la información con manejo de excepciones, instancia objetos `Tour` (compuestos por un objeto `Guia`) y los almacena en un `ArrayList`. Incluye recorrido, filtrado y búsqueda por nombre.
+Sistema orientado a objetos en Java que representa la jerarquía de servicios turísticos de la agencia **Llanquihue Tour**. Aplica herencia mediante una superclase común (`ServicioTuristico`) y tres subclases especializadas, usando `super()` en los constructores y `@Override` en los métodos `toString()`.
 
 ---
 
 ## 🧱 Estructura del proyecto
 src/
 
-├── model/      → Clases Tour y Guia (composición)
+├── model/   → ServicioTuristico, RutaGastronomica, PaseoLacustre, ExcursionCultural
 
-├── util/       → Clase DatoInvalidoException (excepción personalizada)
+├── data/    → GestorServicios
 
-├── service/    → Clase GestorTours (lectura, validación y búsqueda)
-
-└── app/        → Clase Main (ejecución del programa)
-
-resources/
-
-└── tours.txt   → Archivo con los datos de los tours y guías
+└── ui/      → Main
 
 ### Clases implementadas
-- **Guia** → representa al guía turístico asignado a un tour
-- **Tour** → contiene un objeto Guia (composición) y validaciones en sus setters
-- **DatoInvalidoException** → excepción personalizada para datos incorrectos
-- **GestorTours** → lee el archivo, valida los datos con try-catch y permite búsqueda
-- **Main** → recorre, filtra y busca tours, mostrando los resultados por consola
+- **ServicioTuristico** → superclase con nombre y duracionHoras
+- **RutaGastronomica** → agrega numeroDeParadas
+- **PaseoLacustre** → agrega tipoEmbarcacion
+- **ExcursionCultural** → agrega lugarHistorico
+- **GestorServicios** → crea 2 instancias de cada subclase
+- **Main** → muestra todos los servicios por consola
 
-### Relaciones entre clases
-- `Tour` contiene a `Guia` → **composición**
-- `GestorTours` lanza `DatoInvalidoException` cuando un dato no es válido
+### Relaciones
+- Las 3 subclases **heredan** de `ServicioTuristico`
 
 ---
 
 ## ⚙️ Instrucciones para ejecutar
-1. Clona el repositorio:
-git clone https://github.com/zanaoriana/Llanquihue-tour.git
-2. Abre el proyecto en IntelliJ IDEA
-3. Verifica que la carpeta `resources/` esté en la raíz del proyecto
-4. Ejecuta el archivo `Main.java` desde el paquete `app`
+1. Abrir el proyecto en IntelliJ IDEA
+2. Ejecutar `Main.java` desde el paquete `ui`
 
 ---
 
-**Repositorio GitHub:** https://github.com/zanaoriana/Llanquihue-tour  
-**Fecha de entrega:** 17/06/2026
+**Repositorio:** https://github.com/zanaoriana/Llanquihue-tour  
+**Fecha de entrega:** 29/06/2026
 
 ---
 © Duoc UC | Escuela de Informática y Telecomunicaciones
