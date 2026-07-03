@@ -1,8 +1,5 @@
 package model;
 
-/**
- * Superclase que representa un servicio turístico genérico.
- */
 public class ServicioTuristico {
 
     private String nombre;
@@ -21,6 +18,10 @@ public class ServicioTuristico {
     public int getDuracionHoras() { return duracionHoras; }
     public void setDuracionHoras(int duracionHoras) {
         if (duracionHoras > 0) this.duracionHoras = duracionHoras;
+    }
+
+    public void mostrarInformacion() {
+        System.out.println("Servicio: " + getNombre() + " | Duración: " + getDuracionHoras() + " horas");
     }
 
     @Override

@@ -1,8 +1,5 @@
 package model;
 
-/**
- * Subclase que representa un paseo lacustre.
- */
 public class PaseoLacustre extends ServicioTuristico {
 
     private String tipoEmbarcacion;
@@ -15,6 +12,13 @@ public class PaseoLacustre extends ServicioTuristico {
     public String getTipoEmbarcacion() { return tipoEmbarcacion; }
     public void setTipoEmbarcacion(String t) {
         if (t != null && !t.isBlank()) this.tipoEmbarcacion = t;
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        System.out.println("Paseo Lacustre: " + getNombre()
+                + " | Duración: " + getDuracionHoras() + " horas"
+                + " | Embarcación: " + tipoEmbarcacion);
     }
 
     @Override

@@ -1,8 +1,5 @@
 package model;
 
-/**
- * Subclase que representa una excursión cultural.
- */
 public class ExcursionCultural extends ServicioTuristico {
 
     private String lugarHistorico;
@@ -15,6 +12,13 @@ public class ExcursionCultural extends ServicioTuristico {
     public String getLugarHistorico() { return lugarHistorico; }
     public void setLugarHistorico(String l) {
         if (l != null && !l.isBlank()) this.lugarHistorico = l;
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        System.out.println("Excursión Cultural: " + getNombre()
+                + " | Duración: " + getDuracionHoras() + " horas"
+                + " | Lugar histórico: " + lugarHistorico);
     }
 
     @Override

@@ -1,8 +1,5 @@
 package model;
 
-/**
- * Subclase que representa una ruta gastronómica.
- */
 public class RutaGastronomica extends ServicioTuristico {
 
     private int numeroDeParadas;
@@ -15,6 +12,13 @@ public class RutaGastronomica extends ServicioTuristico {
     public int getNumeroDeParadas() { return numeroDeParadas; }
     public void setNumeroDeParadas(int n) {
         if (n > 0) this.numeroDeParadas = n;
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        System.out.println("Ruta Gastronómica: " + getNombre()
+                + " | Duración: " + getDuracionHoras() + " horas"
+                + " | Paradas: " + numeroDeParadas);
     }
 
     @Override
