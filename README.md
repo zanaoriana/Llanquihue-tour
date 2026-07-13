@@ -1,47 +1,55 @@
-# 🧠 Semana 7 – Desarrollo Orientado a Objetos I
+# 🧠 Semana 8 – Desarrollo Orientado a Objetos I
 
 ## 👤 Autora del proyecto
 - **Nombre completo:** Oriana Navarrete
 - **Sección:** Online
-- **Carrera:** Analista Programador
+- **Carrera:** Analista de Datos
 - **Sede:** Online
+
 ---
 
 ## 📘 Descripción general del sistema
-Sistema orientado a objetos en Java que gestiona servicios turísticos de la agencia **Llanquihue Tour**. Aplica polimorfismo mediante el método `mostrarInformacion()` sobrescrito en cada subclase, y una colección genérica `List<ServicioTuristico>` que almacena objetos de distintos tipos.
+Sistema orientado a objetos en Java que integra interfaces, polimorfismo, colecciones genéricas e interfaz gráfica para la agencia **Llanquihue Tour**. Permite registrar y visualizar distintas entidades del sistema (guías turísticos, vehículos y colaboradores externos) desde una GUI basada en JOptionPane.
 
 ---
 
 ## 🧱 Estructura del proyecto
 src/
-├── model/   → ServicioTuristico, RutaGastronomica, PaseoLacustre, ExcursionCultural
-├── data/    → GestorServicios (colección polimórfica)
-└── ui/      → Main (ejecución y validación de getters)
+├── model/   → Registrable (interfaz), GuiaTuristico, Vehiculo, ColaboradorExterno,
+│              ServicioTuristico, RutaGastronomica, PaseoLacustre, ExcursionCultural
+├── data/    → GestorEntidades (colección ArrayList<Registrable> con instanceof)
+│              GestorServicios (colección polimórfica de servicios)
+└── ui/      → Main (demostración por consola), VentanaPrincipal (GUI con JOptionPane)
 
-### Clases implementadas
-- **ServicioTuristico** → superclase con `mostrarInformacion()` base
-- **RutaGastronomica** → sobrescribe `mostrarInformacion()` con número de paradas
-- **PaseoLacustre** → sobrescribe `mostrarInformacion()` con tipo de embarcación
-- **ExcursionCultural** → sobrescribe `mostrarInformacion()` con lugar histórico
-- **GestorServicios** → colección `List<ServicioTuristico>` con 6 objetos y método `mostrarTodos()`
-- **Main** → invoca `mostrarTodos()` y valida getters por consola
+### Clases e interfaces implementadas
+- **Registrable** → interfaz con método `mostrarResumen()`
+- **GuiaTuristico** → implementa Registrable, representa guías de la agencia
+- **Vehiculo** → implementa Registrable, representa vehículos de la agencia
+- **ColaboradorExterno** → implementa Registrable, representa colaboradores externos
+- **GestorEntidades** → colección `ArrayList<Registrable>` con recorrido e `instanceof`
+- **VentanaPrincipal** → GUI con JOptionPane para ingresar y visualizar entidades
 
 ### Conceptos aplicados
-- Herencia con `extends`
-- Polimorfismo con `@Override` en `mostrarInformacion()`
-- Colección genérica `List<ServicioTuristico>`
-- Recorrido con `for-each`
+- Interfaz `Registrable` como contrato de comportamiento
+- Herencia con `extends` y polimorfismo con `@Override`
+- Colección genérica `ArrayList<Registrable>`
+- Operador `instanceof` para diferenciación de tipos
+- Interfaz gráfica con `JOptionPane`
 
 ---
 
 ## ⚙️ Instrucciones para ejecutar
-1. Abrir el proyecto en IntelliJ IDEA
-2. Ejecutar `Main.java` desde el paquete `ui`
+1. Clonar el repositorio:
+git clone https://github.com/zanaoriana/Llanquihue-tour.git
+2. Abrir el proyecto en IntelliJ IDEA
+3. Ejecutar `Main.java` desde el paquete `ui`
+4. Primero se muestra la demostración por consola
+5. Luego se abre la ventana gráfica con el menú de opciones
 
 ---
 
 **Repositorio:** https://github.com/zanaoriana/Llanquihue-tour  
-**Fecha de entrega:** 03/07/2026
+**Fecha de entrega:** 13/07/2026
 
 ---
 © Duoc UC | Escuela de Informática y Telecomunicaciones
