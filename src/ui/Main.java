@@ -1,32 +1,31 @@
 package ui;
 
-import data.GestorServicios;
-import model.ServicioTuristico;
-
-import java.util.List;
+import data.GestorEntidades;
+import model.ColaboradorExterno;
+import model.GuiaTuristico;
+import model.Vehiculo;
 
 /**
- * Clase principal del sistema LlanquihueTourApp - Semana 7.
+ * Clase principal del sistema LlanquihueTourApp - Semana 8.
+ * Lanza la interfaz gráfica y demuestra el uso de instanceof por consola.
  */
 public class Main {
 
     public static void main(String[] args) {
 
-        GestorServicios gestor = new GestorServicios();
+        // Demostración por consola con instanceof
+        GestorEntidades gestor = new GestorEntidades();
 
-        // Mostrar todos los servicios usando polimorfismo
-        gestor.mostrarTodos();
+        gestor.agregar(new GuiaTuristico("Marcela Pinto", "Gastronómica", "+56911112222"));
+        gestor.agregar(new Vehiculo("ABCD12", "Bus", 40));
+        gestor.agregar(new ColaboradorExterno("Pedro Soto", "TransAustral", "Transporte"));
+        gestor.agregar(new GuiaTuristico("Camila Reyes", "Lacustre", "+56933334444"));
+        gestor.agregar(new Vehiculo("WXYZ99", "Van", 12));
 
-        // Validar getters del primer y último servicio (feedback del profesor)
-        System.out.println("\n=== Validación de getters ===\n");
-        List<ServicioTuristico> lista = gestor.obtenerServicios();
+        gestor.mostrarTodas();
 
-        ServicioTuristico primero = lista.get(0);
-        System.out.println("Nombre primer servicio: " + primero.getNombre());
-        System.out.println("Duración primer servicio: " + primero.getDuracionHoras() + " horas");
-
-        ServicioTuristico ultimo = lista.get(lista.size() - 1);
-        System.out.println("Nombre último servicio: " + ultimo.getNombre());
-        System.out.println("Duración último servicio: " + ultimo.getDuracionHoras() + " horas");
+        // Lanzar la interfaz gráfica
+        VentanaPrincipal ventana = new VentanaPrincipal();
+        ventana.iniciar();
     }
 }
