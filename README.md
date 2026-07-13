@@ -1,4 +1,4 @@
-# 🧠 Semana 6 – Desarrollo Orientado a Objetos I
+# 🧠 Semana 7 – Desarrollo Orientado a Objetos I
 
 ## 👤 Autora del proyecto
 - **Nombre completo:** Oriana Navarrete
@@ -8,29 +8,29 @@
 ---
 
 ## 📘 Descripción general del sistema
-Sistema orientado a objetos en Java que representa la jerarquía de servicios turísticos de la agencia **Llanquihue Tour**. Aplica herencia mediante una superclase común (`ServicioTuristico`) y tres subclases especializadas, usando `super()` en los constructores y `@Override` en los métodos `toString()`.
+Sistema orientado a objetos en Java que gestiona servicios turísticos de la agencia **Llanquihue Tour**. Aplica polimorfismo mediante el método `mostrarInformacion()` sobrescrito en cada subclase, y una colección genérica `List<ServicioTuristico>` que almacena objetos de distintos tipos.
 
 ---
 
 ## 🧱 Estructura del proyecto
 src/
-
 ├── model/   → ServicioTuristico, RutaGastronomica, PaseoLacustre, ExcursionCultural
-
-├── data/    → GestorServicios
-
-└── ui/      → Main
+├── data/    → GestorServicios (colección polimórfica)
+└── ui/      → Main (ejecución y validación de getters)
 
 ### Clases implementadas
-- **ServicioTuristico** → superclase con nombre y duracionHoras
-- **RutaGastronomica** → agrega numeroDeParadas
-- **PaseoLacustre** → agrega tipoEmbarcacion
-- **ExcursionCultural** → agrega lugarHistorico
-- **GestorServicios** → crea 2 instancias de cada subclase
-- **Main** → muestra todos los servicios por consola
+- **ServicioTuristico** → superclase con `mostrarInformacion()` base
+- **RutaGastronomica** → sobrescribe `mostrarInformacion()` con número de paradas
+- **PaseoLacustre** → sobrescribe `mostrarInformacion()` con tipo de embarcación
+- **ExcursionCultural** → sobrescribe `mostrarInformacion()` con lugar histórico
+- **GestorServicios** → colección `List<ServicioTuristico>` con 6 objetos y método `mostrarTodos()`
+- **Main** → invoca `mostrarTodos()` y valida getters por consola
 
-### Relaciones
-- Las 3 subclases **heredan** de `ServicioTuristico`
+### Conceptos aplicados
+- Herencia con `extends`
+- Polimorfismo con `@Override` en `mostrarInformacion()`
+- Colección genérica `List<ServicioTuristico>`
+- Recorrido con `for-each`
 
 ---
 
@@ -41,7 +41,7 @@ src/
 ---
 
 **Repositorio:** https://github.com/zanaoriana/Llanquihue-tour  
-**Fecha de entrega:** 29/06/2026
+**Fecha de entrega:** 03/07/2026
 
 ---
 © Duoc UC | Escuela de Informática y Telecomunicaciones
